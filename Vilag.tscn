@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://katyu.png" type="Texture" id=1]
 [ext_resource path="res://padlo.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sarok1.png" type="Texture" id=10]
 [ext_resource path="res://sarok4.png" type="Texture" id=11]
 [ext_resource path="res://Lift.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Platform_Disappear.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 29.4073, 63.9695, 29.5689, 63.9695, 34.8985, 0, 34.737 )
@@ -280,6 +281,10 @@ tile_data = PoolIntArray( 131064, 5, 0, 65553, 5, 0, 196600, 5, 0, 131089, 5, 0,
 [node name="Camera2D1" type="Camera2D" parent="."]
 position = Vector2( 0, 320 )
 current = true
+
+[node name="Platform_Disappear" parent="." instance=ExtResource( 13 )]
+position = Vector2( 156, 534 )
+scale = Vector2( 0.5, 1 )
 
 [node name="Lift" parent="." instance=ExtResource( 12 )]
 position = Vector2( 313, 455 )
