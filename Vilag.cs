@@ -14,9 +14,10 @@ public class Vilag : Node2D
 		Kamera = (Camera2D)GetNode("Camera2D1");
 		Jatekos = (Node2D)GetNode("Jatekos/KinematicBody2D1");
 	}
-	private void _on_Area2D_area_entered(object area)
-{
-	
+	private void _on_Area2D_body_entered(object area)
+{	
+	GD.Print("hello");
+	Jatekos.SetPosition(new Vector2(0, 0));
 }
 }
 
