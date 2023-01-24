@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://katyu.png" type="Texture" id=1]
 [ext_resource path="res://padlo.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://sarok4.png" type="Texture" id=11]
 [ext_resource path="res://Lift.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Platform_Disappear.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 1, 0, 64, 0, 64, 64, 0, 64 )
@@ -267,38 +268,6 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 2590.5, 49.25 )
 
-[sub_resource type="Animation" id=15]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 313, 455 ) ]
-}
-
-[sub_resource type="Animation" id=16]
-resource_name = "mozgas"
-length = 5.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5, 5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 313, 455 ), Vector2( 613, 455 ), Vector2( 313, 455 ) ]
-}
-
 [node name="Vilag" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -316,7 +285,7 @@ position = Vector2( 0, 320 )
 current = true
 
 [node name="Platform_Disappear" parent="." instance=ExtResource( 13 )]
-position = Vector2( 145, 534 )
+position = Vector2( 145, 530 )
 scale = Vector2( 0.5, 1 )
 
 [node name="Lift" parent="." instance=ExtResource( 12 )]
@@ -337,15 +306,8 @@ modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 756.5, 857 )
 shape = SubResource( 14 )
 
-[node name="Lift2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 313, 455 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lift2"]
-autoplay = "mozgas"
-anims/RESET = SubResource( 15 )
-anims/mozgas = SubResource( 16 )
+[node name="Enemy" parent="." instance=ExtResource( 14 )]
+position = Vector2( 100, 545 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="tree_exited" from="Enemy" to="." method="_on_Enemy_tree_exited"]
