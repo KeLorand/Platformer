@@ -278,15 +278,15 @@ position = Vector2( 32, 320 )
 position = Vector2( 1, 0 )
 tile_set = SubResource( 3 )
 format = 1
-tile_data = PoolIntArray( 131064, 0, 0, 65553, 0, 0, 196600, 0, 0, 131089, 0, 0, 262136, 0, 0, 196625, 0, 0, 327672, 0, 0, 262152, 8, 0, 262156, 8, 0, 262161, 0, 0, 393208, 0, 0, 327697, 0, 0, 327713, 0, 0, 327714, 0, 0, 327715, 0, 0, 327716, 0, 0, 327717, 0, 0, 327718, 0, 0, 458744, 0, 0, 393233, 0, 0, 524280, 0, 0, 458766, 0, 0, 458769, 0, 0, 589816, 0, 0, 524302, 0, 0, 524305, 0, 0, 524310, 0, 0, 524315, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 655374, 0, 0, 655385, 0, 0 )
+tile_data = PoolIntArray( 131064, 0, 0, 65553, 0, 0, 196600, 0, 0, 131089, 0, 0, 262136, 0, 0, 196625, 0, 0, 327672, 0, 0, 262152, 8, 0, 262156, 8, 0, 262161, 0, 0, 393208, 0, 0, 327697, 0, 0, 327713, 0, 0, 327714, 0, 0, 327715, 0, 0, 327716, 0, 0, 327717, 0, 0, 327718, 0, 0, 458744, 0, 0, 393233, 0, 0, 524280, 0, 0, 458766, 0, 0, 458769, 0, 0, 589816, 0, 0, 524302, 0, 0, 524305, 0, 0, 524310, 0, 0, 524315, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589838, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 655374, 0, 0 )
 
 [node name="Camera2D1" type="Camera2D" parent="."]
 position = Vector2( 0, 320 )
 current = true
 
 [node name="Platform_Disappear" parent="." instance=ExtResource( 13 )]
-position = Vector2( 145, 530 )
-scale = Vector2( 0.5, 1 )
+modulate = Color( 1, 0.392157, 0.392157, 1 )
+position = Vector2( 161, 608 )
 
 [node name="Lift" parent="." instance=ExtResource( 12 )]
 position = Vector2( 313, 455 )
@@ -307,7 +307,18 @@ position = Vector2( 756.5, 857 )
 shape = SubResource( 14 )
 
 [node name="Enemy" parent="." instance=ExtResource( 14 )]
-position = Vector2( 100, 545 )
+position = Vector2( 813, 537 )
+
+[node name="Platform_Disappear2" parent="." instance=ExtResource( 13 )]
+modulate = Color( 1, 0.392157, 0.392157, 1 )
+position = Vector2( 865, 608 )
+
+[node name="Platform_Disappear3" parent="." instance=ExtResource( 13 )]
+modulate = Color( 1, 0.392157, 0.392157, 1 )
+position = Vector2( 1610, 620 )
+
+[node name="Platform_Disappear4" parent="." instance=ExtResource( 13 )]
+modulate = Color( 1, 0.392157, 0.392157, 1 )
+position = Vector2( 2081, 352 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="tree_exited" from="Enemy" to="." method="_on_Enemy_tree_exited"]

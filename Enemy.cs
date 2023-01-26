@@ -2,7 +2,8 @@ using Godot;
 using System;
 
 public class Enemy : Node2D
-{
+{   Node2D Jatekos;
+    
     private int speed = 2;
     private float time = 0;
     private bool goRight = false;
@@ -11,10 +12,10 @@ public class Enemy : Node2D
     // private string b = "text";
 
     // Called when the node enters the scene tree for the first time.
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-
+       Jatekos = GetNode<Node2D>("Jatekos");
+       
     }
 
     public override void _Process(float delta)
@@ -33,5 +34,13 @@ public class Enemy : Node2D
         {
             Position -= new Vector2(speed, 0);
         }
+    }
+    public void _on_Area2D_body_entered(KinematicBody2D Jatekos)
+    {
+        
+            GD.Print("hello");
+            
+            Jatekos.SetPosition(new Vector2(0, 0));
+        
     }
 }
