@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://katyu.png" type="Texture" id=1]
 [ext_resource path="res://padlo.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Lift.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Platform_Disappear.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=14]
+[ext_resource path="res://CheckPoint.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 1, 0, 64, 0, 64, 64, 0, 64 )
@@ -271,9 +272,6 @@ extents = Vector2( 2590.5, 49.25 )
 [node name="Vilag" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="Jatekos" parent="." instance=ExtResource( 3 )]
-position = Vector2( 32, 320 )
-
 [node name="TileMap1" type="TileMap" parent="."]
 position = Vector2( 1, 0 )
 tile_set = SubResource( 3 )
@@ -320,5 +318,11 @@ position = Vector2( 1610, 620 )
 [node name="Platform_Disappear4" parent="." instance=ExtResource( 13 )]
 modulate = Color( 1, 0.392157, 0.392157, 1 )
 position = Vector2( 2081, 352 )
+
+[node name="CheckPoint" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1187, -22 )
+
+[node name="Jatekos" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32, 320 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
