@@ -7,15 +7,19 @@ public class Vilag : Node2D
     Camera2D Kamera;
     Node2D Jatekos;
     Node2D Ellenseg;
-    public Vector3 SpawnPoint;
+    
     Sprite Heart;
     Sprite Heart2;
     Sprite Heart3;
     int hp = 3;
+    public Vector2 SpawnPoint = new Vector2(0, 0);
+
+
+
     public override void _Process(float delta)
     {
-        Kamera.Position = new Vector2(Jatekos.Position.x, Kamera.Position.y);
-        
+        Kamera.Position = new Vector2(Jatekos.Position.x, Jatekos.Position.y + 300);
+        GD.Print(Jatekos.Position);
     }
     public override void _Ready()
     {   
@@ -37,5 +41,7 @@ public class Vilag : Node2D
         if(hp < 3) Heart.QueueFree();
         if(hp < 2) Heart2.QueueFree();
         
+        //GetTree().ChangeScene("res://DeathScreen.tscn");
+        Jatekos.Position = SpawnPoint;
     }
 }

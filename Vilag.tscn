@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://katyu.png" type="Texture" id=1]
 [ext_resource path="res://padlo.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=14]
 [ext_resource path="res://dasdasd.png" type="Texture" id=15]
 [ext_resource path="res://3739446.jpg" type="Texture" id=16]
+[ext_resource path="res://CheckPoint.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 1, 0, 64, 0, 64, 64, 0, 64 )
@@ -309,7 +310,7 @@ position = Vector2( 756.5, 857 )
 shape = SubResource( 14 )
 
 [node name="Enemy" parent="." instance=ExtResource( 14 )]
-position = Vector2( 813, 537 )
+position = Vector2( 811, 539 )
 
 [node name="Platform_Disappear2" parent="." instance=ExtResource( 13 )]
 modulate = Color( 1, 0.392157, 0.392157, 1 )
@@ -334,5 +335,9 @@ position = Vector2( 12375.5, 637.006 )
 scale = Vector2( 12.5245, 4.65107 )
 z_index = -1
 texture = ExtResource( 16 )
+
+[node name="CheckPoint" parent="." instance=ExtResource( 17 )]
+position = Vector2( -211, 512 )
+scale = Vector2( 0.311523, 0.3332 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
