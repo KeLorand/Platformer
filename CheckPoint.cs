@@ -14,4 +14,9 @@ public class CheckPoint : Node2D
     {
 
     }
+
+    private void SetChekpoint(Vilag vilag)
+    {
+        
+    }
 }

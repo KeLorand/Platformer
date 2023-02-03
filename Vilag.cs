@@ -6,6 +6,7 @@ public class Vilag : Node2D
     Camera2D Kamera;
     Node2D Jatekos;
     Node2D Ellenseg;
+    public Vector3 SpawnPoint;
 
 
     public override void _Process(float delta)
