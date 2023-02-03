@@ -330,7 +330,7 @@ z_index = -3
 texture = ExtResource( 15 )
 
 [node name="3739446" type="Sprite" parent="Dasdasd"]
-position = Vector2( 12279.2, 426.922 )
+position = Vector2( 12375.5, 637.006 )
 scale = Vector2( 12.5245, 4.65107 )
 z_index = -1
 texture = ExtResource( 16 )
