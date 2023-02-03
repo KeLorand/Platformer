@@ -276,6 +276,7 @@ script = ExtResource( 5 )
 
 [node name="Jatekos" parent="." instance=ExtResource( 3 )]
 position = Vector2( 32, 320 )
+z_index = 2
 
 [node name="TileMap1" type="TileMap" parent="."]
 position = Vector2( 1, 0 )
@@ -337,7 +338,7 @@ z_index = -1
 texture = ExtResource( 16 )
 
 [node name="CheckPoint" parent="." instance=ExtResource( 17 )]
-position = Vector2( -211, 512 )
+position = Vector2( 2470, 257 )
 scale = Vector2( 0.311523, 0.3332 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

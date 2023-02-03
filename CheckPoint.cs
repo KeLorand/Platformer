@@ -16,7 +16,7 @@ public class CheckPoint : Node2D
 
     public override void _Process(float delta)
     {
-        
+
     }
 
     public void _on_Area2D_body_entered(PhysicsBody2D player)
