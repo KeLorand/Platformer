@@ -20,6 +20,7 @@ public class Vilag : Node2D
     {
         Kamera.Position = new Vector2(Jatekos.Position.x, Jatekos.Position.y + 300);
         GD.Print(Jatekos.Position);
+        GD.Print(SpawnPoint);
     }
     public override void _Ready()
     {   
