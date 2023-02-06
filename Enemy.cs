@@ -9,12 +9,15 @@ public class Enemy : Node2D
     private bool goRight = false;
     private Node2D ScriptNode;
     private Vilag vilag;
+    
+
 
     public override void _Ready()
     {
         Jatekos = GetNode<Node2D>("Jatekos");
         ScriptNode = GetNode("/root/Vilag") as Node2D;
         vilag = ScriptNode as Vilag;
+        
     }
 
     public override void _Process(float delta)
@@ -34,12 +37,14 @@ public class Enemy : Node2D
             Position -= new Vector2(speed, 0);
         }
     }
+    
     public void _on_Area2D_body_entered(KinematicBody2D Jatekos)
     {
         
             GD.Print("hello");
             
             Jatekos.Position = vilag.SpawnPoint;
+            
         
     }
 }

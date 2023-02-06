@@ -7,11 +7,11 @@ public class Vilag : Node2D
     Camera2D Kamera;
     Node2D Jatekos;
     Node2D Ellenseg;
-    
+    Node2D Trap;
     Sprite Heart;
     Sprite Heart2;
     Sprite Heart3;
-    int hp = 3;
+    public int hp = 3;
     public Vector2 SpawnPoint = new Vector2(0, 0);
 
 
@@ -31,9 +31,9 @@ public class Vilag : Node2D
         Heart = (Sprite)GetNode("Jatekos/KinematicBody2D1/Heart");
         Heart2 = (Sprite)GetNode("Jatekos/KinematicBody2D1/Heart2");
         Heart3 = (Sprite)GetNode("Jatekos/KinematicBody2D1/Heart3");
-        
+        Trap = (Node2D)GetNode("Trap");
     }
-    private void _on_Area2D_body_entered(object area)
+    private void _on_Area2D_body_entered(KinematicBody2D Jatekos)
     {
         GD.Print("hello");
         hp = hp - 1;
