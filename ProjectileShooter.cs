@@ -2,7 +2,8 @@ using Godot;
 
 public class ProjectileShooter : Node
 {   
-    int kokanytimer;
+    float timer;
+    bool fire;
     private void ShootProjectile()
     {
         var projectile = new RigidBody2D();
@@ -17,11 +18,21 @@ public class ProjectileShooter : Node
 
     public override void _Process(float delta)
     {   
-        kokanytimer++;
-        if (kokanytimer == 60) {
-            ShootProjectile();
-            kokanytimer = 0;
+        timer += delta;
+        if(timer >2 && fire == true){
+                ShootProjectile();
+                timer = 0;
         }
+            
 
+    }
+    public void _on_Area2D_body_entered(KinematicBody2D Jatekos){
+            
+            fire = true;
+            
+
+    }
+    public void _on_Area2D_body_exited(KinematicBody2D Jatekos){
+        fire = false;
     }
 }

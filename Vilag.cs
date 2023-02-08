@@ -45,4 +45,5 @@ public class Vilag : Node2D
         //GetTree().ChangeScene("res://DeathScreen.tscn");
         Jatekos.Position = SpawnPoint;
     }
+    
 }
