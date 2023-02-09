@@ -7,19 +7,12 @@
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 282.0
-margin_top = 395.0
-margin_right = 745.0
-margin_bottom = 490.0
+margin_left = 71.0
+margin_top = 448.0
+margin_right = 534.0
+margin_bottom = 543.0
+rect_scale = Vector2( 2, 2 )
 text = "Meghaltál."
-align = 1
-
-[node name="DeathCounter" type="Label" parent="."]
-margin_left = 11.0
-margin_top = 435.0
-margin_right = 1024.0
-margin_bottom = 488.0
-text = "Halálok száma:"
 align = 1
 
 [node name="Deathbg" type="Sprite" parent="."]

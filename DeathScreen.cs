@@ -4,17 +4,13 @@ using System;
 public class DeathScreen : Node2D
 {
 
-    private Label deathsCountLabel;
-    private int deathsCount;
+
     private float resetTimer;
 
 
     public override void _Ready()
     {
-        deathsCountLabel = GetNode("DeathCounter") as Label;
-        deathsCount++;
-        GD.Print(deathsCount);
-        deathsCountLabel.Text = $"Halálok száma: {deathsCount}";
+        
     }
 
 
