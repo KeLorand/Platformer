@@ -4,10 +4,12 @@ using System;
 public class Projectile : Node2D
 {
 
+    private RigidBody2D ProjectileRB;
 
     public override void _Ready()
     {
-
+        ProjectileRB = GetNode("RigidBody2D") as RigidBody2D;
+        ProjectileRB.LinearVelocity = new Vector2(-500, 0);
     }
 
 
@@ -18,6 +20,6 @@ public class Projectile : Node2D
 
     public void _on_Area2D_body_entered(KinematicBody2D body)
     {
-        this.QueueFree();
+        GD.Print(body.Name);
     }
 }

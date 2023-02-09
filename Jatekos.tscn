@@ -10,31 +10,31 @@ height = 232.0
 
 [node name="Jatekos" type="Node2D"]
 
-[node name="KinematicBody2D1" type="KinematicBody2D" parent="."]
+[node name="JatekosBody" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Sprite1" type="Sprite" parent="KinematicBody2D1"]
+[node name="Sprite1" type="Sprite" parent="JatekosBody"]
 position = Vector2( -969, -336 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 offset = Vector2( 3876, 1344 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JatekosBody"]
 position = Vector2( -19, -2 )
 scale = Vector2( 0.25, 0.25 )
 shape = SubResource( 1 )
 
-[node name="Heart" type="Sprite" parent="KinematicBody2D1"]
+[node name="Heart" type="Sprite" parent="JatekosBody"]
 position = Vector2( -64, -73 )
 scale = Vector2( 0.335556, 0.346438 )
 texture = ExtResource( 3 )
 
-[node name="Heart2" type="Sprite" parent="KinematicBody2D1"]
+[node name="Heart2" type="Sprite" parent="JatekosBody"]
 position = Vector2( -23, -75 )
 scale = Vector2( 0.335556, 0.346438 )
 texture = ExtResource( 3 )
 
-[node name="Heart3" type="Sprite" parent="KinematicBody2D1"]
+[node name="Heart3" type="Sprite" parent="JatekosBody"]
 position = Vector2( 17, -75 )
 scale = Vector2( 0.335556, 0.346438 )
 texture = ExtResource( 3 )
