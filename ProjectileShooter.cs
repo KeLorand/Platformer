@@ -8,12 +8,9 @@ public class ProjectileShooter : Node
     [Export]public PackedScene Projectile;
     private void ShootProjectile()
     {
-
-        var ProjectileRB = new RigidBody2D();
+        GD.Print("loves");
         Node2D projectile = (Node2D)Projectile.Instance();
-        projectile.AddChild(ProjectileRB);
         this.AddChild(projectile);
-        ProjectileRB.SetLinearVelocity(new Vector2(-1000, 0));
     }
 
     public override void _Process(float delta)
@@ -21,6 +18,7 @@ public class ProjectileShooter : Node
         timer += delta;
         if (timer > 2 && fire == true)
         {
+            GD.Print("aaas");
             ShootProjectile();
             timer = 0;
         }
