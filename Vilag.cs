@@ -14,7 +14,7 @@ public class Vilag : Node2D
     public int hp = 3;
     public Vector2 SpawnPoint = new Vector2(0, 0);
 
-
+    [Export] public PackedScene Platform;  
 
     public override void _Process(float delta)
     {
@@ -30,6 +30,7 @@ public class Vilag : Node2D
         Heart2 = (Sprite)GetNode("Jatekos/JatekosBody/Heart2");
         Heart3 = (Sprite)GetNode("Jatekos/JatekosBody/Heart3");
         Trap = (Node2D)GetNode("Trap");
+        
     }
     private void _on_Area2D_body_entered(KinematicBody2D Jatekos)
     {
