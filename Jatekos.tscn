@@ -11,6 +11,7 @@ height = 232.0
 [node name="Jatekos" type="Node2D"]
 
 [node name="JatekosBody" type="KinematicBody2D" parent="."]
+input_pickable = true
 script = ExtResource( 2 )
 
 [node name="Sprite1" type="Sprite" parent="JatekosBody"]
