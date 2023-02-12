@@ -43,3 +43,6 @@ texture = ExtResource( 2 )
 [node name="CheckPoint" type="Sprite" parent="."]
 position = Vector2( 200, 500 )
 texture = ExtResource( 5 )
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

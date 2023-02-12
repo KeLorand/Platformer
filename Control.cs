@@ -2,24 +2,18 @@ using Godot;
 
 public class ControlPanel : Control
 {
-    private Button startButton;
-    private Button exitButton;
-
+    
     public override void _Ready()
     {
-        startButton = GetNode<Button>("StartButton");
-        exitButton = GetNode<Button>("ExitButton");
-
-        startButton.Connect("pressed", this, nameof(OnStartButtonPressed));
-        exitButton.Connect("pressed", this, nameof(OnExitButtonPressed));
+        
     }
 
-    private void OnStartButtonPressed()
+    public void _on_StartButton_pressed()
     {
         GetTree().ChangeScene("res://Vilag.tscn");
     }
 
-    private void OnExitButtonPressed()
+    public void _on_ExitButton_pressed()
     {
         GetTree().Quit();
     }
