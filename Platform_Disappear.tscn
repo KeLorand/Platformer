@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://fakepadlo.png" type="Texture" id=1]
+[ext_resource path="res://padlo.png" type="Texture" id=1]
 [ext_resource path="res://Platform_Disappear.cs" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -10,6 +10,7 @@ extents = Vector2( 22.5, 32 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 0.435294, 0.435294, 1 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

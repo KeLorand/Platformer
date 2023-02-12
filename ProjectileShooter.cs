@@ -28,12 +28,19 @@ public class ProjectileShooter : Node
     public void _on_Area2D_body_entered(KinematicBody2D Jatekos)
     {
 
-        fire = true;
+        if (Jatekos.Name == "JatekosBody")
+        {
+            fire = true;
+        }
+        
 
 
     }
     public void _on_Area2D_body_exited(KinematicBody2D Jatekos)
-    {
-        fire = false;
+    {   
+        if (Jatekos.Name == "JatekosBody")
+        {
+            fire = false;
+        }
     }
 }
