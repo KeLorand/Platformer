@@ -10,6 +10,7 @@ extents = Vector2( 22.5, 32 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.490196, 0, 0, 1 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
