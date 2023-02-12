@@ -19,8 +19,28 @@ public class Vilag : Node2D
 	public override void _Process(float delta)
 	{
 		Kamera.Position = new Vector2(Jatekos.Position.x, Jatekos.Position.y + 300);
-		if (hp < 3) Heart.QueueFree();
-		if (hp < 2) Heart2.QueueFree();
+		
+		if (hp == 3)
+		{
+			Heart.Visible = true;
+			Heart2.Visible = true;
+			Heart3.Visible = true;
+		}
+
+		if (hp == 2)
+		{
+			Heart.Visible = false;
+			Heart2.Visible = true;
+			Heart3.Visible = true;
+		}
+
+		if (hp == 1)
+		{
+			Heart.Visible = false;
+			Heart2.Visible = false;
+			Heart3.Visible = true;
+		}
+
 		if (hp <= 0) GetTree().ChangeScene("res://DeathScreen.tscn");
 	}
 	public override void _Ready()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://katyu.png" type="Texture" id=1]
 [ext_resource path="res://padlo.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Képernyőkép 2023-02-06 085450.png" type="Texture" id=18]
 [ext_resource path="res://ProjectileShooter.cs" type="Script" id=19]
 [ext_resource path="res://janky.png" type="Texture" id=20]
+[ext_resource path="res://CheckeredFlag.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Protein.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 1, 0, 64, 0, 64, 64, 0, 64 )
@@ -262,6 +264,18 @@ tile_data = PoolIntArray( -655368, 0, 0, -655367, 0, 0, -655366, 0, 0, -655365, 
 
 [node name="Platform_Disappear" parent="TileMap1" instance=ExtResource( 13 )]
 position = Vector2( 4768, 96 )
+
+[node name="CheckeredFlag" parent="TileMap1" instance=ExtResource( 21 )]
+position = Vector2( 6319, 5 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Protein" parent="TileMap1/CheckeredFlag" instance=ExtResource( 22 )]
+position = Vector2( -8336, 550 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Protein2" parent="TileMap1/CheckeredFlag" instance=ExtResource( 22 )]
+position = Vector2( -2850, -344 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Camera2D1" type="Camera2D" parent="."]
 position = Vector2( 0, 320 )
