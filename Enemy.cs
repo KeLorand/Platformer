@@ -2,7 +2,8 @@ using Godot;
 using System;
 
 public class Enemy : Node2D
-{   Node2D Jatekos;
+{   
+	Node2D Jatekos;
 	
 	private int speed = 2;
 	private float time = 0;
@@ -14,7 +15,7 @@ public class Enemy : Node2D
 
 	public override void _Ready()
 	{
-		Jatekos = GetNode<Node2D>("Jatekos");
+		Jatekos = GetNode<Node2D>("/root/Vilag/Jatekos/JatekosBody");
 		ScriptNode = GetNode("/root/Vilag") as Node2D;
 		vilag = ScriptNode as Vilag;
 		
@@ -38,12 +39,15 @@ public class Enemy : Node2D
 		}
 	}
 	
-	public void _on_Area2D_body_entered(KinematicBody2D Jatekos)
+	public void _on_Area2D_body_entered(KinematicBody2D BodyEnter)
 	{
 		
-			GD.Print("hello");
 			
-			Jatekos.Position = vilag.SpawnPoint;
+			if (BodyEnter.Name == "JatekosBody")
+			{
+				Jatekos.Position = vilag.SpawnPoint;
+			}
+			
 			
 		
 	}

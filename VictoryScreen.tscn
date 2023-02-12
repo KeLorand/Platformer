@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://victory.jpg" type="Texture" id=1]
+[ext_resource path="res://DeathScreen.cs" type="Script" id=2]
+
+[node name="DeathScreen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 81.0
+margin_top = 55.0
+margin_right = 544.0
+margin_bottom = 150.0
+rect_scale = Vector2( 2, 2 )
+text = "Sikeresen kivitted a játékot!
+Milűűűán ma nem kaőőpőott szaktanárit."
+align = 1
+
+[node name="Deathbg" type="Sprite" parent="."]
+position = Vector2( 513.5, 320 )
+scale = Vector2( 1.23309, 0.652439 )
+z_index = -6
+texture = ExtResource( 1 )
