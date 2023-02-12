@@ -1,8 +1,45 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Control.cs" type="Script" id=1]
+[ext_resource path="res://deathbg (1).png" type="Texture" id=2]
+[ext_resource path="res://janky.png" type="Texture" id=3]
+[ext_resource path="res://3739446.jpg" type="Texture" id=4]
+[ext_resource path="res://CheckPoint.png" type="Texture" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+
+[node name="StartButton" type="Button" parent="."]
+modulate = Color( 0, 1, 0.396078, 1 )
+margin_left = 300.0
+margin_right = 600.0
+margin_bottom = 100.0
+text = "Start"
+
+[node name="ExitButton" type="Button" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 300.0
+margin_top = 200.0
+margin_right = 600.0
+margin_bottom = 300.0
+text = "Exit"
+
+[node name="3739446" type="Sprite" parent="."]
+position = Vector2( 672, 397 )
+z_index = -5
+texture = ExtResource( 4 )
+
+[node name="Janky" type="Sprite" parent="3739446"]
+position = Vector2( 50, -91 )
+texture = ExtResource( 3 )
+
+[node name="Deathbg(1)" type="Sprite" parent="."]
+position = Vector2( 684, 617 )
+scale = Vector2( 0.337109, 0.328704 )
+texture = ExtResource( 2 )
+
+[node name="CheckPoint" type="Sprite" parent="."]
+position = Vector2( 200, 500 )
+texture = ExtResource( 5 )
