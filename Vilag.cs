@@ -14,15 +14,18 @@ public class Vilag : Node2D
 	public int hp = 3;
 	public Vector2 SpawnPoint = new Vector2(0, 0);
 
-	[Export] public PackedScene Platform;  
+	[Export] public PackedScene Platform;
 
 	public override void _Process(float delta)
 	{
 		Kamera.Position = new Vector2(Jatekos.Position.x, Jatekos.Position.y + 300);
+		if (hp < 3) Heart.QueueFree();
+		if (hp < 2) Heart2.QueueFree();
+		if (hp <= 0) GetTree().ChangeScene("res://DeathScreen.tscn");
 	}
 	public override void _Ready()
-	{   
-		
+	{
+
 		Kamera = (Camera2D)GetNode("Camera2D1");
 		Jatekos = (Node2D)GetNode("Jatekos/JatekosBody");
 		Ellenseg = (Node2D)GetNode("Enemy");
@@ -30,19 +33,18 @@ public class Vilag : Node2D
 		Heart2 = (Sprite)GetNode("Jatekos/JatekosBody/Heart2");
 		Heart3 = (Sprite)GetNode("Jatekos/JatekosBody/Heart3");
 		Trap = (Node2D)GetNode("Trap");
-		
+
 	}
 	private void _on_Area2D_body_entered(KinematicBody2D Jatekos)
 	{
-		GD.Print("hello");
-		hp = hp - 1;
-		if(hp <= 0) GetTree().ChangeScene("res://DeathScreen.tscn");
-		Jatekos.Position = new Vector2(0,0);
-		if(hp < 3) Heart.QueueFree();
-		if(hp < 2) Heart2.QueueFree();
-		
-		//GetTree().ChangeScene("res://DeathScreen.tscn");
-		Jatekos.Position = SpawnPoint;
+		if ((Jatekos.Name == "JatekosBody"))
+		{
+			hp = hp - 1;
+			Jatekos.Position = SpawnPoint;
+			//GetTree().ChangeScene("res://DeathScreen.tscn");
+			Jatekos.Position = SpawnPoint;
+		}
+
 	}
-	
+
 }
