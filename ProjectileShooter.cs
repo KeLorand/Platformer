@@ -5,7 +5,7 @@ public class ProjectileShooter : Node
     float timer;
     bool fire;
 
-    [Export]public PackedScene Projectile;
+    [Export] public PackedScene Projectile;
     private void ShootProjectile()
     {
         GD.Print("loves");
@@ -32,15 +32,16 @@ public class ProjectileShooter : Node
         {
             fire = true;
         }
-        
+
 
 
     }
     public void _on_Area2D_body_exited(KinematicBody2D Jatekos)
-    {   
+    {
         if (Jatekos.Name == "JatekosBody")
         {
             fire = false;
         }
+
     }
 }

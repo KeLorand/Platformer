@@ -31,7 +31,10 @@ public class Projectile : Node2D
             this.QueueFree();
             vilag.hp -=1;
         }
-
+        if (body.Name != "RigidBody2D")
+        {
+            this.QueueFree();
+        }
         
     }
 }
