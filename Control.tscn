@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Control.cs" type="Script" id=1]
+[ext_resource path="res://Menu.cs" type="Script" id=1]
 [ext_resource path="res://deathbg (1).png" type="Texture" id=2]
 [ext_resource path="res://janky.png" type="Texture" id=3]
 [ext_resource path="res://3739446.jpg" type="Texture" id=4]
 [ext_resource path="res://CheckPoint.png" type="Texture" id=5]
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -26,15 +26,6 @@ margin_right = 600.0
 margin_bottom = 300.0
 text = "Exit"
 
-[node name="3739446" type="Sprite" parent="."]
-position = Vector2( 672, 397 )
-z_index = -5
-texture = ExtResource( 4 )
-
-[node name="Janky" type="Sprite" parent="3739446"]
-position = Vector2( 50, -91 )
-texture = ExtResource( 3 )
-
 [node name="Deathbg(1)" type="Sprite" parent="."]
 position = Vector2( 684, 617 )
 scale = Vector2( 0.337109, 0.328704 )
@@ -43,6 +34,16 @@ texture = ExtResource( 2 )
 [node name="CheckPoint" type="Sprite" parent="."]
 position = Vector2( 200, 500 )
 texture = ExtResource( 5 )
+
+[node name="3739446" type="Sprite" parent="."]
+position = Vector2( 661, 398 )
+scale = Vector2( 1, 1 )
+z_index = -5
+texture = ExtResource( 4 )
+
+[node name="Janky" type="Sprite" parent="3739446"]
+position = Vector2( 50, -91 )
+texture = ExtResource( 3 )
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

@@ -7,7 +7,7 @@ public class Vilag : Node2D
 	Camera2D Kamera;
 	Node2D Jatekos;
 	Node2D Ellenseg;
-	Node2D Trap;
+	
 	Sprite Heart;
 	Sprite Heart2;
 	Sprite Heart3;
@@ -42,6 +42,8 @@ public class Vilag : Node2D
 		}
 
 		if (hp <= 0) GetTree().ChangeScene("res://DeathScreen.tscn");
+
+		if (Input.IsActionPressed("ui_cancel")) GetTree().ChangeScene("res://Control.tscn");
 	}
 	public override void _Ready()
 	{
@@ -52,7 +54,7 @@ public class Vilag : Node2D
 		Heart = (Sprite)GetNode("Jatekos/JatekosBody/Heart");
 		Heart2 = (Sprite)GetNode("Jatekos/JatekosBody/Heart2");
 		Heart3 = (Sprite)GetNode("Jatekos/JatekosBody/Heart3");
-		Trap = (Node2D)GetNode("Trap");
+		
 
 	}
 	private void _on_Area2D_body_entered(KinematicBody2D Jatekos)
